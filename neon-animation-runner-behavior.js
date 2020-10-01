@@ -145,7 +145,9 @@ export const NeonAnimationRunnerBehaviorImpl = {
 
       for (var j in entries) {
         if (entries[j].animation && entries[j].animation.cancel) {
-          entries[j].animation.cancel();
+          if (entries[j].animation) {
+            entries[j].animation.cancel();
+          }
         }
       }
     }
